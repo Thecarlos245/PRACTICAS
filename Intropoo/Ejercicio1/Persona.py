@@ -12,10 +12,10 @@ class Persona:
             print(f"{self.nombre} es mayor de edad")
         else:
             print(f"{self.nombre} es menor de edad")
-
+# a) Mostrar saludo
 p1 = Persona("Juan", 20, "Lima")
 print(p1)
-
+# b) Crea 3 persona y su saludo 
 p2 = Persona("Ana", 15, "Arequipa")
 p3 = Persona("Pedro", 30, "Cusco")
 p4 = Persona("Maria", 18, "Trujillo")
@@ -23,8 +23,10 @@ print(p2)
 print(p3)
 print(p4)
 
-
+# c) Verificar si es mayor de edad
 p1.es_mayor_de_edad()
 p2.es_mayor_de_edad()
 p3.es_mayor_de_edad()
 p4.es_mayor_de_edad()
+
+
