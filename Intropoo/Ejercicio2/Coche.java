@@ -24,24 +24,17 @@ public class Coche {
    
     }
 
-    public String getMarca() {
-        return marca;
+    public void mostrarVelocidad() {
+        System.out.println("La velocidad de " + marca + " " + modelo + " es de " + velocidad + " km/h");
     }
 
-    public String getModelo() {
-        return modelo;
-    }
-
-    public int getVelocidad() {
-        return velocidad;
-    }
-    
     public static void main(String[] args ){
         Coche c1 = new Coche("BMW","audi",50);
         Coche c2 = new Coche("Ford","Deveste",80);
         System.out.println("------ LA VELOCIDAD QUE VA ------");
-        System.out.println("La velocidad de " + c1.getMarca() + " " + c1.getModelo() + " " + " es de " + c1.getVelocidad() + "km/h");
-        System.out.println("La velocidad de " + c2.getMarca() + " " + c2.getModelo() + " " + " es de " + c2.getVelocidad() + "km/h");    
+        c1.mostrarVelocidad();
+        c2.mostrarVelocidad();
+      
         System.out.println("------ Coche1 ------");
         c1.acelerar();
         c1.frenar();

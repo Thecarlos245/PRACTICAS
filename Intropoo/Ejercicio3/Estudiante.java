@@ -13,20 +13,28 @@ public class Estudiante {
 
     // a) metodo calcular promedio
 
-    public void calcularPromedio() {
-        double promedio = (nota1 + nota2) / 2;
-        System.out.println("El promedio de " + nombre + " es: " + promedio);
+    public double calcularPromedio() {
+        return (nota1 + nota2) / 2;
+        
     }
 
     // b) metodo verifiAprovacion
 
-    public void verificarAprovacion() {
-        double promedio = (nota1 + nota2) / 2;
+    public double verificarAprovacion() {
+        double promedio = calcularPromedio();
         if (promedio >= 6) {
-            System.out.println(nombre + " Aprobo la materia.");
+            System.out.println(nombre + " aprobo la materia.");
         } else {
             System.out.println(nombre + " No aprobo la materia.");
         }
+        return promedio;
+    }
+    public void mostrarPromedio() {
+        System.out.println("El promedio de " + nombre + " es: " + calcularPromedio());
+    }
+    public void mostrarAprovacion() {
+        System.out.println("El estudiante " + nombre + " " + verificarAprovacion());
+        
     }
 
 
@@ -37,13 +45,19 @@ public class Estudiante {
         Estudiante e2 = new Estudiante("Mauricio", 7, 8);
         Estudiante e3 = new Estudiante("Manuel", 4, 5);
        
-        e1.calcularPromedio();
-        e2.calcularPromedio();
-        e3.calcularPromedio();
+        System.out.println("------ Estudiante1 ------");
+        e1.mostrarAprovacion();
+        e1.mostrarPromedio();
+        System.out.println("------ Estudiante2 ------");
+        e2.mostrarPromedio();
+        e2.mostrarAprovacion();
+        System.out.println("------ Estudiante3 ------");
+        e3.mostrarPromedio();
+        e3.mostrarAprovacion();
        
-        e1.verificarAprovacion();
-        e2.verificarAprovacion();
-        e3.verificarAprovacion();
+        
+        
+       
        
     }
  

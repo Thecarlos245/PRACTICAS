@@ -13,14 +13,14 @@ class Coche:
         self.velocidad -= 5
         return f"El coche {self.marca} {self.modelo} ha frenado a {self.velocidad} km/h"
 
-    def getVelocidad(self):
+    def __str__(self):
         return f"La velocidad que va {self.marca} {self.modelo} es de: {self.velocidad} km/h"
 
 # c) Crear 2 coches
 c1 = Coche("Toyota", "Corolla", 50)
 c2 = Coche("Nissan", "Sentra", 80)
-print(c1.getVelocidad())
-print(c2.getVelocidad())
+print(c1)
+print(c2)
 print("------ COCHE1 ------")
 print(c1.acelerar())
 print(c1.frenar())

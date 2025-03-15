@@ -13,13 +13,13 @@ public class Celular {
         this.minutos = minutos;
     }
 
-    // a) metodo instalar aplicacion
+    // a)  instalar aplicacion
 
     public void instalarAplicacion() {
         System.out.println("Se instalo una aplicacion: " + aplicacion);
     }
 
-    // b) utilizarAplicacion
+    // b) utilizar Aplicacion
 
     public void utilizarAplicacion(int memmoria, double minutos) {
         double consumoBateria = 0;
@@ -39,6 +39,7 @@ public class Celular {
         }
         System.out.println("Se utilizó la aplicación " + aplicacion + " por " + minutos + " minutos. Batería restante: " + bateria + "%");
         
+        // d) apagar celular
         if(bateria == 0){
             System.out.println("Celular apagado.");
         }
@@ -48,24 +49,27 @@ public class Celular {
      public void mostrarBateriaRestante() {
         System.out.println("Batería restante: " + bateria + "%");
     }
+  
 
 
 
     public static void main(String[] args) {
 
-        // c) Crear 3 celulares y mostrar su bateria restante
-        Celular c1 = new Celular("Facebook", 100, 100, 30);
-        Celular c2 = new Celular("Instagram", 100, 250, 30);
-        Celular c3 = new Celular("Whatsapp", 100, 50, 30);
+        
+        Celular c1 = new Celular("Facebook", 50, 100, 20);
+        Celular c2 = new Celular("Instagram", 60, 250, 40);
+        Celular c3 = new Celular("Whatsapp", 0, 230, 0);
        
         c1.instalarAplicacion();
         c2.instalarAplicacion();
         c3.instalarAplicacion();
        
-        c1.utilizarAplicacion(100, 30);
-        c2.utilizarAplicacion(250, 30);
-        c3.utilizarAplicacion(50, 30);
+        c1.utilizarAplicacion(100, 20);
+        c2.utilizarAplicacion(250, 40);
+        c3.utilizarAplicacion(230, 0);
        
+
+        // c) Mostrar bateria restante
         c1.mostrarBateriaRestante();
         c2.mostrarBateriaRestante();
         c3.mostrarBateriaRestante();
