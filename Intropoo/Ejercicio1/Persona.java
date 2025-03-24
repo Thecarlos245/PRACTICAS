@@ -1,9 +1,9 @@
 package Intropoo.Ejercicio1;
 
 public class Persona {
-    int edad;
-    String nombre;
-    String ciudad;
+    private int edad;
+    private String nombre;
+    private String ciudad;
 
     public Persona(int edad, String nombre, String ciudad) {
         this.edad = edad;
@@ -11,7 +11,7 @@ public class Persona {
         this.ciudad = ciudad;
     }
 
-    public void mostrarSaludo() {
+    public void Mostrar() {
        System.out.println("Hola, soy " + nombre + " de " + ciudad);
     }
     
@@ -27,18 +27,19 @@ public class Persona {
 
 
 public static void main(String[] args) {
-    // TODO code application logic here
+    
             // a) Mostrar el saludo 
     Persona p1 = new Persona(21,"carlos","La Paz");
-    p1.mostrarSaludo();
+    p1.Mostrar();
     
     // b) Crea 3 personas y crea su saludo 
     Persona p2 = new Persona(10,"Mauricio","Beni");
     Persona p3 = new Persona(18,"Manuel","Santa Cruz");
     Persona p4 = new Persona(10,"Erland","La Paz");
-    p2.mostrarSaludo();
-    p3.mostrarSaludo();
-    p4.mostrarSaludo();
+    p2.Mostrar();
+    p3.Mostrar();
+    p4.Mostrar();
+    System.out.println(" ----- EDADES DE LAS PERSONAS -----");
     // c) verificar su edad 
     p1.VerificarEdad();
     p2.VerificarEdad();
