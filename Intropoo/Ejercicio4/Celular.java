@@ -1,10 +1,13 @@
 package Intropoo.Ejercicio4;
 
 public class Celular {
-    String aplicacion;
-    int bateria;
+    private String aplicacion;
+    private int bateria;
     int memoria;
     double minutos;
+    private int espacioDisponible = 1024;
+    private int aplicacionesInstaladas = 0;
+    private int maxAplicaciones = 20;
 
     public Celular(String aplicacion, int bateria, int memoria, double minutos) {
         this.aplicacion = aplicacion;
@@ -13,69 +16,65 @@ public class Celular {
         this.minutos = minutos;
     }
 
-    // a)  instalar aplicacion
-
-    public void instalarAplicacion() {
-        System.out.println("Se instalo una aplicacion: " + aplicacion);
+    // a) metodo instalar aplicacion
+    public void instalarAplicacion(String nombreAplicacion, int tamanoMb) {
+        if (aplicacionesInstaladas < maxAplicaciones && espacioDisponible >= tamanoMb) {
+            aplicacionesInstaladas++;
+            espacioDisponible -= tamanoMb;
+            System.out.println("Se instaló la aplicación: " + nombreAplicacion);
+        } else {
+            System.out.println("No se puede instalar la aplicación: " + nombreAplicacion + ". Espacio insuficiente o límite de aplicaciones alcanzado.");
+        }
     }
 
-    // b) utilizar Aplicacion
-
-    public void utilizarAplicacion(int memmoria, double minutos) {
-        double consumoBateria = 0;
-        if (memmoria >= 100) {
-            consumoBateria = (minutos/10) * 0.2;
-            
-        }else if(memoria >= 250) {
-            consumoBateria = (minutos/10) * 0.5;
-           
-        }else{
-            consumoBateria = (minutos/10) * 0.1;
-
+    // b) utilizarAplicacion
+    public void utilizarAplicacion(int tamanoMb, int minutosUso) {
+        if (bateria <= 0) {
+            System.out.println("Celular apagado");
+            return;
         }
+
+        int consumoBateria = 0;
+        if (tamanoMb > 100) {
+            consumoBateria = (minutosUso / 10) * 2;
+        } else if (tamanoMb > 250) {
+            consumoBateria = (minutosUso / 10) * 5;
+        } else {
+            consumoBateria = (minutosUso / 10) * 1;
+        }
+
         bateria -= consumoBateria;
         if (bateria < 0) {
             bateria = 0;
         }
-        System.out.println("Se utilizó la aplicación " + aplicacion + " por " + minutos + " minutos. Batería restante: " + bateria + "%");
-        
-        // d) apagar celular
-        if(bateria == 0){
-            System.out.println("Celular apagado.");
-        }
+
+        System.out.println("Se utilizó la aplicación " + aplicacion + " por " + minutosUso + " minutos. Batería restante: " + bateria + "%");
+
+      
     }
 
-     // c) mostrar porcentaje de batería restante
-     public void mostrarBateriaRestante() {
+    // c) mostrar porcentaje de batería restante
+    public void mostrarBateria() {
         System.out.println("Batería restante: " + bateria + "%");
     }
-  
-
-
 
     public static void main(String[] args) {
-
-        
         Celular c1 = new Celular("Facebook", 50, 100, 20);
         Celular c2 = new Celular("Instagram", 60, 250, 40);
         Celular c3 = new Celular("Whatsapp", 0, 230, 0);
-       
-        c1.instalarAplicacion();
-        c2.instalarAplicacion();
-        c3.instalarAplicacion();
-       
+
+        c1.instalarAplicacion("Facebook", 100);
+        c2.instalarAplicacion("Instagram", 250);
+        c3.instalarAplicacion("Whatsapp", 230);
+
+        
         c1.utilizarAplicacion(100, 20);
         c2.utilizarAplicacion(250, 40);
         c3.utilizarAplicacion(230, 0);
-       
 
         // c) Mostrar bateria restante
-        c1.mostrarBateriaRestante();
-        c2.mostrarBateriaRestante();
-        c3.mostrarBateriaRestante();
-       
+        c1.mostrarBateria();
+        c2.mostrarBateria();
+        c3.mostrarBateria();
     }
-
-
-    
 }

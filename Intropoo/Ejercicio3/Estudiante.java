@@ -1,20 +1,20 @@
 package Intropoo.Ejercicio3;
 
 public class Estudiante {
-    String nombre;
-    double nota1;
-    double nota2;
+    private String nombre;
+    private double nota_1;
+    private double nota_2;
 
-    public Estudiante(String nombre, double nota1, double nota2) {
+    public Estudiante(String nombre, double nota_1, double nota_2) {
         this.nombre = nombre;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
+        this.nota_1 = nota_1;
+        this.nota_2 = nota_2;
     }
 
     // a) metodo calcular promedio
 
     public double calcularPromedio() {
-        return (nota1 + nota2) / 2;
+        return (nota_1 + nota_2) / 2;
         
     }
 
@@ -32,10 +32,7 @@ public class Estudiante {
     public void mostrarPromedio() {
         System.out.println("El promedio de " + nombre + " es: " + calcularPromedio());
     }
-    public void mostrarAprovacion() {
-        System.out.println("El estudiante " + nombre + " " + verificarAprovacion());
-        
-    }
+   
 
 
     public static void main(String[] args) {
@@ -46,14 +43,15 @@ public class Estudiante {
         Estudiante e3 = new Estudiante("Manuel", 4, 5);
        
         System.out.println("------ Estudiante1 ------");
-        e1.mostrarAprovacion();
         e1.mostrarPromedio();
+        e1.verificarAprovacion();
         System.out.println("------ Estudiante2 ------");
-        e2.mostrarPromedio();
-        e2.mostrarAprovacion();
+        e2.mostrarPromedio();  
+        e2.verificarAprovacion();         
         System.out.println("------ Estudiante3 ------");
         e3.mostrarPromedio();
-        e3.mostrarAprovacion();
+        e3.verificarAprovacion();
+        
        
         
         

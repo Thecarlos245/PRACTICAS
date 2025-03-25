@@ -1,20 +1,20 @@
 class Coche:
 
     def __init__(self, marca, modelo, velocidad):
-        self.marca = marca
-        self.modelo = modelo 
-        self.velocidad = velocidad
+        self.__marca = marca
+        self.__modelo = modelo 
+        self.__velocidad = velocidad
 # a) Crear un método que acelere 
     def acelerar(self):
-        self.velocidad += 10
-        return f"El coche {self.marca} {self.modelo} ha acelerado a {self.velocidad} km/h"
+        self.__velocidad += 10
+        return f"El coche {self.__marca} {self.__modelo} ha acelerado a {self.__velocidad} km/h"
 # b) Crear un método que frene
     def frenar(self):
-        self.velocidad -= 5
-        return f"El coche {self.marca} {self.modelo} ha frenado a {self.velocidad} km/h"
+        self.__velocidad -= 5
+        return f"El coche {self.__marca} {self.__modelo} ha frenado a {self.__velocidad} km/h"
 
     def mostar(self):
-        return f"La velocidad que va {self.marca} {self.modelo} es de: {self.velocidad} km/h"
+        return f"La velocidad que va {self.__marca} {self.__modelo} es de: {self.__velocidad} km/h"
 
 # c) Crear 2 coches
 c1 = Coche("Toyota", "Corolla", 50)

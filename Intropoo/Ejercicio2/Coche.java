@@ -1,9 +1,9 @@
 package Intropoo.Ejercicio2;
 
 public class Coche {
-    String marca;
-    String modelo;
-    int velocidad;
+    private String marca;
+    private String modelo;
+    private int velocidad;
 
     public Coche(String marca, String modelo, int velocidad) {
         this.marca = marca;

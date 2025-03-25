@@ -11,7 +11,7 @@ public class Persona {
         this.ciudad = ciudad;
     }
 
-    public void Mostrar() {
+    public void mostrar() {
        System.out.println("Hola, soy " + nombre + " de " + ciudad);
     }
     
@@ -30,15 +30,15 @@ public static void main(String[] args) {
     
             // a) Mostrar el saludo 
     Persona p1 = new Persona(21,"carlos","La Paz");
-    p1.Mostrar();
+    p1.mostrar();
     
     // b) Crea 3 personas y crea su saludo 
     Persona p2 = new Persona(10,"Mauricio","Beni");
     Persona p3 = new Persona(18,"Manuel","Santa Cruz");
     Persona p4 = new Persona(10,"Erland","La Paz");
-    p2.Mostrar();
-    p3.Mostrar();
-    p4.Mostrar();
+    p2.mostrar();
+    p3.mostrar();
+    p4.mostrar();
     System.out.println(" ----- EDADES DE LAS PERSONAS -----");
     // c) verificar su edad 
     p1.VerificarEdad();

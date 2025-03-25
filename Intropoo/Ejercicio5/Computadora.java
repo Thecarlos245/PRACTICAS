@@ -23,6 +23,19 @@ public class Computadora {
         this.encendida = false;
 
     }
+
+    public void mostrarComponentes() {
+        System.out.println("Microprocesador: " + microprocesador);
+        System.out.println("Placa madre: " + placamadre);
+        System.out.println("RAM: " + ram + " GB");
+        System.out.println("Almacenamiento: " + almacenamiento + " GB");
+        System.out.println("Tarjeta de video: " + tarjetadevideo);
+        System.out.println("Fuente: " + fuente);
+        System.out.println("Disco SSD: " + discossd);
+        System.out.println("Gabinete: " + gabinete);
+
+    }
+
     public void mostrarEstado() {
         
         if (encendida) {
@@ -39,24 +52,14 @@ public class Computadora {
         mostrarEstado();
     }
 
-    public void mostrarComponentes() {
-        System.out.println("Microprocesador: " + microprocesador);
-        System.out.println("Placa madre: " + placamadre);
-        System.out.println("RAM: " + ram + " GB");
-        System.out.println("Almacenamiento: " + almacenamiento + " GB");
-        System.out.println("Tarjeta de video: " + tarjetadevideo);
-        System.out.println("Fuente: " + fuente);
-        System.out.println("Disco SSD: " + discossd);
-        System.out.println("Gabinete: " + gabinete);
-
-    }
-
+    
     public static void main(String[] args) {
         Computadora com1 = new Computadora("Intel Core i7 de 13th", "Asus Prime", 16, 500, "Nvidia RTX 3060", "EVGA 600W", "Kingston 240GB", "Corsair Carbide 275R");
         // a) mostrar componentes
         com1.mostrarComponentes();
         // b) encender/apagar
-        com1.encenderApagar();
+        com1.encenderApagar(); // encender
+    //    com1.encenderApagar(); // apagar
         // c) mostrar estado
         com1.mostrarEstado();
         
