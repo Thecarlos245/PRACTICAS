@@ -18,13 +18,13 @@ class Videojuego:
         self.__cantidadJugadores += cantidad
        
 j1 = Videojuego("Fornite", "PC",5)
-j2 = Videojuego("FIFA 21", "PS4")
+j2 = Videojuego("FIFA 22", "PS4")
 
 j1.mostrar()
 j2.mostrar()
 
-j1.agragarJugadores(1)
-j2.agragarJugadores(3)
+j1.agregarJugadores()
+j2.agregarJugadores(3)
 
 print("\nDespués de agregar jugadores:")
 j1.mostrar()
