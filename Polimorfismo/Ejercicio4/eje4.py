@@ -1,3 +1,13 @@
+
+#7. Se hace referencia a algunos animales mediante las siguientes clases:
+#a) Instanciar 1 Perro, 1 Gato y 1 Pájaro.
+#b) Sobrecargar el método hacerSonido() para que cada animal emita su sonido
+#característico.
+#c) Implementar un método moverse() que indique cómo se mueve cada animal
+#(correr, saltar, volar, etc.).
+
+
+
 class Perro:
     def __init__(self, nombre, edad, raza):
         self.__nombre = nombre
